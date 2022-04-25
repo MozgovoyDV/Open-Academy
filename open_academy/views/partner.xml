@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="partner_instruction_form_view">
+      <field name="name">partner.instruction</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+                 <notebook position="inside">
+                     <page string = "Sessions">
+                         <group>
+                         <field name="instructor"/>
+                         <field name="Учитель_Уровень1"/>
+                         <field name="Учитель_Уровень2"/>
+                         <field name="session_ids"/>
+                         </group>
+                    </page>
+                 </notebook>
+      </field>
+    </record>
+
+</odoo>
