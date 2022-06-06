@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+
+        <menuitem name="Session" id="open_academy.session"/>
+        <menuitem name="Course" id="open_academy.course"/>
+
+    </data>
+</odoo>
