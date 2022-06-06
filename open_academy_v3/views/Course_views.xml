@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+
+        <record id="Course_view_form" model="ir.ui.view" >
+            <field name="name">Course.view.form</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+                <form string = "Course form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="responsible_id"/>
+                        </group>
+                        <notebook>
+                            <page string = "Deskription">
+                                <field name="description"/>
+                            </page>
+                            <page string = "Session">
+                                <field name="session_id"/>
+                                <tree string="Reg">
+                                    <field name="name"/>
+                                    <!--                            <field name="instructor_id"/>-->
+                                </tree>
+                            </page>
+                            <page string = "About">
+                                example
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="course_view_tree" model="ir.ui.view" >
+            <field name="name">Course.view.tree</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="responsible_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="course_view_search" model="ir.ui.view" >
+            <field name="name">course.view.search</field>
+            <field name="model">open_academy.course</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <filter name="my_ideas" string="My Ideas" domain="[('responsible_id', '=', uid)]"/>
+                    <group string="Group By">
+                        <filter name="group_by_responsible" context="{'group_by': 'responsible_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="course_list_action" model="ir.actions.act_window">
+            <field name="name">Courses1</field>
+            <field name="res_model">open_academy.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>
